@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative; 
+}
+
+.numero-turno {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    background-color: #14c1f0;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    z-index: 10; 
+}
+.cantidaddia {
+    display: inline-block; 
+    padding: 5px 10px; 
+    margin: 2px; 
+    font-size: 1.8em; 
+    background-color: #14c1f0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.lista-turnos {
+    position: absolute;
+    top: 40px; 
+    right: 10px; 
+    padding: 0;
+    list-style-type: none;
+    z-index: 10; 
+}
+
+.lista-turnos li {
+    background-color: #14c1f0;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.turno-actual, .turno-cola, .turnos-dia {
+    margin-bottom: 20px;
+    position: relative; 
+}
+
+#turnoSiguiente {
+    margin-top: 10px; 
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f01446;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#turnoSiguiente:hover {
+    background-color: #f01446;
+}
+
+#turnoSiguiente:focus {
+    outline: none;
+}
+
+.turno-actual h1, .turno-cola h2, .turnos-dia h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
