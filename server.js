@@ -31,7 +31,11 @@ io.on('connection', (socket) => {
         const turno = { number: turnoActual, timestamp: today };
         turnos.push(turno);
 
-        turnosDia[today] = (turnosDia[today] || 0) + 1;
+
+        if (!turnosDia[today]) {
+            turnosDia[today] = 0;
+        }
+        turnosDia[today]++;
 
         io.emit('turnoActual', turnoActual);
         io.emit('turnoCola', turnos.slice(-3));

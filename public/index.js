@@ -1,4 +1,4 @@
-const socket = io();
+var socket = io();
 
 const turnoActualElement = document.getElementById('turnoActual');
 const turnoColaElement = document.getElementById('turnoCola');
@@ -8,19 +8,20 @@ const notificacion = document.getElementById('sonido');
 
 //Acá recibe el ticket o turno en el que se está actualmente
 socket.on('turnoActual', (turnoActual) => {
-    turnoActualElement.textContent = turnoActual;
+    turnoActualElement.textContent = `A${turnoActual}`;
 });
 
 //Acá recibe el evento y va actualizando los li con el turno que corresponde
 socket.on('turnoCola', (turnos) => {
-    turnoColaElement.innerHTML = turnos.map(turno => `<li>${turno.number}</li>`).join('');
+    turnoColaElement.innerHTML = turnos.map(turno => `<li>A${turno.number}</li>`).join('');
 });
 
 //Acá recibe el turno con la fecha del dia que se clickeo el boton
 socket.on('turnosDia', (turnosDia) => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = moment().format('YYYY-MM-DD');
     turnosDiaElement.textContent = turnosDia[today] || 0;
 });
+
 
 //Acá muestra el nonido de notificacion
 socket.on('playSound', () => {
